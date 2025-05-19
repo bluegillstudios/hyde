@@ -9,6 +9,14 @@ struct Expr {
     virtual ~Expr() = default;
 };
 
+struct AssignExpr : Expr {
+    std::string name;
+    std::shared_ptr<Expr> value;
+
+    AssignExpr(std::string name, std::shared_ptr<Expr> value)
+        : name(std::move(name)), value(std::move(value)) {}
+};
+
 struct NumberExpr : Expr {
     double value;
     explicit NumberExpr(double val) : value(val) {}
