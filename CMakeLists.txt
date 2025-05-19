@@ -1,9 +1,9 @@
 add_executable(hyde
-    src/main.cpp
-    src/lexer.cpp
-    src/parser.cpp
-    src/interpreter.cpp
-    src/utils.cpp
+    hyde/main.cpp
+    hyde/lexer.cpp
+    hyde/parse.cpp
+    hyde/inter.cpp
+    hyde/util.cpp
 )
 
 target_include_directories(hyde PRIVATE include)

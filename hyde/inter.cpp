@@ -11,16 +11,6 @@ void Interpreter::interpret(const std::vector<std::shared_ptr<Statement>>& state
     }
 }
 
-void Interpreter::execute(const std::shared_ptr<Statement>& stmt) {
-    if (auto exprStmt = std::dynamic_pointer_cast<ExprStatement>(stmt)) {
-        executeExprStatement(exprStmt);
-    } else if (auto printStmt = std::dynamic_pointer_cast<PrintStatement>(stmt)) {
-        executePrintStatement(printStmt);
-    } else {
-        throw std::runtime_error("Unknown statement type");
-    }
-}
-
 void Interpreter::executeExprStatement(const std::shared_ptr<ExprStatement>& stmt) {
     evaluate(stmt->expr); // Ignore result
 }
